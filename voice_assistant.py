@@ -5,19 +5,19 @@ from elevenlabs.conversational_ai.conversation import Conversation
 from elevenlabs.conversational_ai.default_audio_interface import DefaultAudioInterface
 from elevenlabs.types import ConversationConfig
 
-# Example user + schedule
+
 user_name = "Alex"
 schedule = "Sales Meeting with Taipy at 10:00; Gym with Sophie at 17:00"
 prompt = f"You are a helpful assistant. Your interlocutor has the following schedule: {schedule}."
 first_message = f"Hello {user_name}, how can I help you today?"
 
-# Load API credentials from .env
+
 load_dotenv()
 AGENT_ID = os.getenv("AGENT_ID")
 API_KEY = os.getenv("API_KEY")
 
 print("AGENT_ID =", AGENT_ID)
-print("API_KEY =", API_KEY[:6] + "...")  # just show first few chars for debug
+print("API_KEY =", API_KEY[:6] + "...")  
 
 # Conversation setup
 conversation_override = {
@@ -64,10 +64,10 @@ conversation = Conversation(
     callback_user_transcript=print_user_transcript,
 )
 
-# Start the assistant session
+
 conversation.start_session()
 
-# Keep program running so the background threads don’t die immediately
+
 try:
     print("\nVoice assistant is running... press Ctrl+C to stop.\n")
     while True:

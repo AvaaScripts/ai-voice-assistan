@@ -1,0 +1,9 @@
+to run:
+python voice_assistant.py 
+
+git pull origin main
+
+git add .
+git commit -m "msg"
+git push origin main
+
